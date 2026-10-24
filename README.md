@@ -13,6 +13,7 @@ Neither input is modified. Everything happens locally.
 Create a key    Original PNG + hidden PNG  →  key file
 Reveal image   Original PNG + key file    →  hidden PNG
 ```
+<img width="2255" height="1364" alt="prev" src="https://github.com/user-attachments/assets/35e4346b-7108-4aa1-a89f-66c5aff000d2" />
 
 ## Features
 
