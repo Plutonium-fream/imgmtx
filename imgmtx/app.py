@@ -10,6 +10,7 @@ from pathlib import Path
 from tkinter import filedialog
 
 from PIL import Image, ImageDraw, ImageTk
+from . import __version__
 
 from .core import (
     ImageInfo,
@@ -633,7 +634,7 @@ class App(tk.Tk):
         window.title("How ImgMtx works")
         paint(window, bg=CARD)
         window.resizable(False, False)
-        label(window, "Using ImgMtx", 18, family=DISPLAY).pack(anchor="w", padx=25, pady=(24, 16))
+        label(window, f"ImgMtx {__version__}", 18, family=DISPLAY).pack(anchor="w", padx=25, pady=(24, 16))
         text = (
             "CREATE A KEY\nSelect an original PNG and a hidden PNG, then save a key file.\n"
             "The two images can have different sizes and transparency.\n\n"

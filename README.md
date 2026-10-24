@@ -28,7 +28,19 @@ Reveal image   Original PNG + key file    →  hidden PNG
 - **Offline operation** — no accounts, uploads, telemetry, or runtime network requests.
 - **Background processing** — keep the interface responsive during key creation and recovery.
 
-## Installation
+## Download for Windows
+
+Get the portable Windows x64 build from [GitHub Releases](https://github.com/Plutonium-fream/imgmtx/releases/latest). Download the ZIP, extract it, and double-click **ImgMtx.exe**. No installation or separate Python runtime is needed. A standalone versioned `.exe` is also available.
+
+Each release includes **SHA256SUMS**, **BUILD_INFO.json**, dependency notices, and readable license texts inside the ZIP. Verify a download in PowerShell:
+
+```powershell
+Get-FileHash .\ImgMtx-1.0.0-windows-x64.zip -Algorithm SHA256
+```
+
+Compare the hash with its entry in `SHA256SUMS`. The executable is unsigned; these checksums verify file integrity, not a digital publisher signature. Keep the license notices when redistributing the app.
+
+## Install from source
 
 Windows is the tested desktop platform. You need **Python 3.11+**, **Tkinter**, and **Pillow 13+**.
 
@@ -114,9 +126,12 @@ imgmtx/
 ├── samples/               # Example image pair
 ├── tests/                 # Core, UI, theme, and layout tests
 ├── tools/
-│   └── make_icon.py       # Icon generator
+│   ├── make_icon.py       # Icon generator
+│   └── package_release.py # Versioned packaging, notices, hashes, binary audit
 ├── docs/
-│   └── key-format.md      # Format specification
+│   ├── key-format.md      # Format specification
+│   └── releases.md        # Build and release instructions
+├── licenses/             # Native-runtime license sources
 ├── Start-ImgMtx.cmd       # Windows launcher
 ├── run_imgmtx.py          # Executable entry point
 ├── build.ps1             # Windows build script
@@ -139,13 +154,13 @@ UI tests require an available desktop. The hardlink test skips when the environm
 ### Build a standalone Windows app
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install pyinstaller
+.\.venv\Scripts\python.exe -m pip install pyinstaller==6.22.3
 .\build.ps1 -Python .\.venv\Scripts\python.exe
 ```
 
-The build creates `dist/ImgMtx.exe`, including Python, Tkinter, and Pillow. The executable runs without a separate Python installation.
+Build from a clean, committed checkout using 64-bit Python on Windows. The build creates `dist/ImgMtx-1.0.0-windows-x64/ImgMtx.exe`, a matching portable ZIP and standalone executable, notices, build metadata, and SHA-256 manifests. Python, Tkinter, Pillow, and license notices are bundled. Windows file properties and the Help window show the app version.
 
-Generated executables and build dependencies are excluded from source control.
+The package is checked for personal build paths in decompressed archive entries and nested Python bytecode before it is written. Generated executables and build dependencies stay excluded from source control. See [release instructions](docs/releases.md).
 
 ## License
 
