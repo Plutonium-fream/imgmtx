@@ -1,6 +1,6 @@
 # ImgMtx
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)
+![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB)
 ![Platform](https://img.shields.io/badge/Desktop-Windows-66755C)
 ![Interface](https://img.shields.io/badge/Interface-Tkinter-66755C)
 [![License: MIT](https://img.shields.io/badge/License-MIT-AD432C)](LICENSE)
@@ -13,7 +13,7 @@ Neither input is modified. Everything happens locally.
 Create a key    Original PNG + hidden PNG  →  key file
 Reveal image   Original PNG + key file    →  hidden PNG
 ```
-<img width="2255" height="1364" alt="prev" src="https://github.com/user-attachments/assets/35e4346b-7108-4aa1-a89f-66c5aff000d2" />
+<img width="2255" height="1364" alt="ImgMtx desktop interface" src="docs/images/preview.png" />
 
 ## Features
 
@@ -30,7 +30,7 @@ Reveal image   Original PNG + key file    →  hidden PNG
 
 ## Installation
 
-Windows is the tested desktop platform. You need **Python 3.10+**, **Tkinter**, and **Pillow**.
+Windows is the tested desktop platform. You need **Python 3.11+**, **Tkinter**, and **Pillow 13+**.
 
 The standard Windows Python installer includes Tkinter when its Tcl/Tk component is enabled.
 

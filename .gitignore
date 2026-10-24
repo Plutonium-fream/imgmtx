@@ -30,9 +30,15 @@ htmlcov/
 *.pem
 *.p12
 
-# User-created keys and exports; keep intentional sample PNGs tracked
+# Personal input images, keys, and exports; only reviewed sample PNGs are public
+*.png
+!samples/original.png
+!samples/hidden.png
+!docs/images/preview.png
 *.imgkey
 *.key.png
+*.txt
+!requirements.txt
 /keys/
 /exports/
 /revealed*.png

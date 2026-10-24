@@ -7,13 +7,6 @@ if exist ".venv\Scripts\pythonw.exe" (
     exit /b
 )
 
-rem Codex includes a local Python runtime with Pillow and Tkinter.
-set "IMGM_TX_RUNTIME=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python"
-if exist "%IMGM_TX_RUNTIME%\pythonw.exe" (
-    start "" "%IMGM_TX_RUNTIME%\pythonw.exe" -m imgmtx
-    exit /b
-)
-
 py -3 -c "import tkinter; from PIL import Image" >nul 2>nul
 if not errorlevel 1 (
     start "" pyw -3 -m imgmtx
@@ -26,7 +19,7 @@ if not errorlevel 1 (
     exit /b
 )
 
-echo ImgMtx requires Python 3.10+ with Tkinter and Pillow.
+echo ImgMtx requires Python 3.11+ with Tkinter and Pillow 13+.
 echo Install Python from python.org, then run:
 echo   py -3 -m pip install -r requirements.txt
 echo Double-click this launcher again after installation.
