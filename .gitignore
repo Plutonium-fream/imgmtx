@@ -1,0 +1,48 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.python-version
+*.egg-info/
+.eggs/
+
+# Build tools and generated executables
+/.build-deps/
+/build/
+/dist/
+*.spec
+
+# Test artifacts and coverage
+/test-output/
+tests/.imgmtx-*/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+
+# User-created keys and exports; keep intentional sample PNGs tracked
+*.imgkey
+*.key.png
+/keys/
+/exports/
+/revealed*.png
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log

@@ -1,0 +1,15 @@
+{
+  "description": "Offline PNG image mapping with lossless recovery, image/custom key files, and a light/dark desktop interface.",
+  "topics": [
+    "python",
+    "tkinter",
+    "desktop-app",
+    "windows",
+    "png",
+    "image-processing",
+    "image-mapping",
+    "lossless",
+    "offline",
+    "dark-mode"
+  ]
+}
